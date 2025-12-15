@@ -7,16 +7,16 @@
 
   <style>
     /* Scroll animations */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
+    .reveal {
+      opacity: 0;
+      transform: translateY(110px) scale(0.95);
+      transition: opacity 1.9s ease, transform 1.9s ease;
+    }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
 
     body {
       margin: 0;
@@ -115,7 +115,7 @@
 <body>
 
   <header>
-    <img src="profile.jpeg" alt="Demir Uzun" class="profile-pic" />
+    <img src="./profile.jpeg" alt="Demir Uzun" class="profile-pic" />
     <h1>Demir Uzun</h1>
     <p>Aspiring Medical Student</p>
     <p>
@@ -221,29 +221,26 @@
   <footer>
     © 2025 Demir Uzun
   </footer>
-<script>
-  const reveals = document.querySelectorAll(".reveal");
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          observer.unobserve(entry.target); // animate once
-        }
-      });
-    },
-    {
-      threshold: 0.15
-    }
-  );
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
 
-  reveals.forEach(section => {
-    observer.observe(section);
-  });
-</script>
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    reveals.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
-
-
