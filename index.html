@@ -6,6 +6,18 @@
   <title>Demir Uzun | CV</title>
 
   <style>
+    /* Scroll animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -114,7 +126,7 @@
 
   <main>
 
-    <section>
+    <section class="reveal">
       <h2>Profile</h2>
       <p>
         Sociable, highly motivated and creative student with strong communication,
@@ -124,7 +136,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="reveal">
       <h2>Experience</h2>
 
       <p class="date">July 2025 — Öncan Veterinary Clinic (Intern)</p>
@@ -152,7 +164,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="reveal">
       <h2>Interests & Achievements</h2>
 
       <p><strong>Folk Dancing</strong><br>
@@ -175,7 +187,7 @@
       </p>
     </section>
 
-    <section>
+    <section class="reveal">
       <h2>Education</h2>
 
       <p class="date">International AS & A Levels</p>
@@ -209,7 +221,29 @@
   <footer>
     © 2025 Demir Uzun
   </footer>
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  reveals.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 
 </body>
 </html>
+
 
