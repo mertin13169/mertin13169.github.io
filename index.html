@@ -8,69 +8,94 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f6f3f8;
+      color: #1f1f1f;
+      line-height: 1.65;
     }
 
     header {
-      background: #111;
-      color: #fff;
-      padding: 50px 20px;
+      background: linear-gradient(135deg, #2a0f3f, #5b1b7d);
+      color: white;
+      padding: 70px 20px 90px;
       text-align: center;
     }
 
+    .profile-pic {
+      width: 165px;
+      height: 165px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #f3e8ff;
+      margin-bottom: 20px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+    }
+
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      margin: 12px 0 6px;
+      font-size: 2.7rem;
+      letter-spacing: 0.5px;
     }
 
     header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      opacity: 0.9;
+      margin: 6px 0;
+      font-size: 1.05rem;
+      opacity: 0.92;
     }
 
     main {
       max-width: 900px;
-      margin: 40px auto;
+      margin: -70px auto 50px;
       padding: 0 20px;
     }
 
     section {
-      background: #fff;
-      padding: 30px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      background: white;
+      padding: 32px;
+      margin-bottom: 26px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(80, 0, 120, 0.08);
     }
 
     section h2 {
       margin-top: 0;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 8px;
+      font-size: 1.6rem;
+      border-left: 5px solid #a855f7;
+      padding-left: 14px;
+      color: #2a0f3f;
     }
 
     .date {
-      font-weight: bold;
-      margin-top: 15px;
+      font-weight: 600;
+      margin-top: 18px;
+      color: #4b145f;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 22px;
       font-size: 0.9rem;
-      color: #777;
+      color: #6b6b6b;
     }
 
     a {
-      color: #0066cc;
+      color: #a855f7;
       text-decoration: none;
+      font-weight: 500;
     }
 
     a:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.1rem;
+      }
+      .profile-pic {
+        width: 135px;
+        height: 135px;
+      }
     }
   </style>
 </head>
@@ -78,11 +103,12 @@
 <body>
 
   <header>
+    <img src="profile.jpg" alt="Demir Uzun" class="profile-pic" />
     <h1>Demir Uzun</h1>
-    <p>Aspiring medical student • Intern experience in veterinary and hospital settings</p>
+    <p>Aspiring Medical Student</p>
     <p>
       Cyprus • Çatalköy<br>
-      📧 <a href="mailto:uzundemir00@gmail.com" style="color:#fff;">uzundemir00@gmail.com</a>
+      📧 <a href="mailto:uzundemir00@gmail.com" style="color:#f3e8ff;">uzundemir00@gmail.com</a>
     </p>
   </header>
 
@@ -92,9 +118,9 @@
       <h2>Profile</h2>
       <p>
         Sociable, highly motivated and creative student with strong communication,
-        time-management, and problem-solving skills developed through extracurricular
-        activities. Passionate about medicine, biology, and the functions of the human body,
-        with practical clinical and observational experience.
+        time-management, and problem-solving skills. Passionate about medicine,
+        biology, and the functions of the human body, supported by hands-on
+        clinical and observational experience.
       </p>
     </section>
 
@@ -103,29 +129,26 @@
 
       <p class="date">July 2025 — Öncan Veterinary Clinic (Intern)</p>
       <p>
-        Worked as a veterinary intern for one month during summer break.
-        Gained experience in patient handling, interpreting blood test results,
-        and observing surgical procedures and techniques used by surgeons and assistants.
+        Gained experience in patient handling, interpretation of blood test results,
+        and observation of surgical procedures and techniques used by veterinary surgeons.
       </p>
 
       <p class="date">August 2025 — Akçiçek State Hospital (Intern)</p>
       <p>
-        Interned in emergency and internal medicine departments.
-        Learned suturing techniques, blood pressure monitoring,
-        and medication use for various symptoms.
+        Interned in emergency and internal medicine departments. Learned suturing techniques,
+        blood pressure monitoring, and medication administration for various clinical cases.
       </p>
 
       <p class="date">11 August 2025 — Surgical Observation</p>
       <p>
-        Observed a complex operation involving removal of a benign mass from the salivary gland.
-        Gained insight into nerve-sensitive surgical procedures and pathology workflow.
+        Observed a complex salivary gland surgery involving removal of a benign mass,
+        with close attention to nerve preservation and pathology procedures.
       </p>
 
-      <p class="date">September 2025 — Pediatric Immunology Observation</p>
+      <p class="date">September 2025 — Pediatric Immunology</p>
       <p>
-        Observed the work of a pediatrician specialized in immunology.
-        Witnessed allergy testing procedures and learned about child psychology
-        and patient communication.
+        Observed pediatric immunology practice, including allergy testing and
+        patient interaction, with a focus on child psychology and communication.
       </p>
     </section>
 
@@ -133,14 +156,13 @@
       <h2>Interests & Achievements</h2>
 
       <p><strong>Folk Dancing</strong><br>
-        Started at age 6 and continued through primary, secondary, and high school,
-        developing teamwork and discipline.
+        Practiced from early childhood through high school, developing discipline,
+        coordination, and teamwork.
       </p>
 
-      <p><strong>School & Class Presidency</strong><br>
-        Class president in 9th and 10th grade.
-        Elected school president in 11th grade, organizing events
-        and demonstrating leadership skills.
+      <p><strong>School Leadership</strong><br>
+        Class president in 9th and 10th grade. Elected school president in 11th grade,
+        organizing activities and demonstrating leadership skills.
       </p>
 
       <p><strong>Music</strong><br>
@@ -149,7 +171,7 @@
       </p>
 
       <p><strong>Coding</strong><br>
-        Self-taught basic algorithm development using Python.
+        Self-taught basic algorithms using Python.
       </p>
     </section>
 
@@ -178,7 +200,7 @@
 
       <p class="date">IELTS</p>
       <p>
-        Predicted Grade: 7
+        Overall Band Score: <strong>7.5</strong>
       </p>
     </section>
 
@@ -190,3 +212,4 @@
 
 </body>
 </html>
+
