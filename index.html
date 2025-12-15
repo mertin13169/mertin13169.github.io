@@ -21,42 +21,48 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #f6f3f8;
+      background-color: #f7f2f3;
       color: #1f1f1f;
       line-height: 1.65;
     }
 
     header {
-      background: linear-gradient(135deg, #2a0f3f, #5b1b7d);
+      background: linear-gradient(135deg, #5a0f1a, #8f1d2d, #b02a37);
       color: white;
       padding: 90px 20px 120px;
       text-align: center;
     }
 
-    /* FIXED PROFILE PIC */
+    /* Profile picture with non-static look */
     .profile-pic {
       width: 500px;
       height: 500px;
-      max-width: 90vw;
-      max-height: 90vw;
       border-radius: 50%;
       object-fit: cover;
-      border: 6px solid #f3e8ff;
-      margin-bottom: 28px;
-      box-shadow: 0 16px 45px rgba(0,0,0,0.45);
+      margin-bottom: 30px;
+      background:
+        linear-gradient(135deg, #b02a37, #ff6b6b);
+      padding: 6px;
+      box-shadow:
+        0 20px 60px rgba(176,42,55,0.55),
+        0 0 0 8px rgba(255,255,255,0.08);
+    }
+
+    .profile-pic {
+      background-clip: padding-box;
     }
 
     header h1 {
-      margin: 14px 0 10px;
-      font-size: 3.4rem;
+      margin: 16px 0 10px;
+      font-size: 3.6rem;
       font-weight: 800;
       letter-spacing: 0.6px;
     }
 
     header p {
       margin: 6px 0;
-      font-size: 1.2rem;
-      opacity: 0.95;
+      font-size: 1.25rem;
+      opacity: 0.96;
     }
 
     main {
@@ -70,21 +76,21 @@
       padding: 32px;
       margin-bottom: 26px;
       border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(80, 0, 120, 0.08);
+      box-shadow: 0 12px 30px rgba(120, 20, 30, 0.08);
     }
 
     section h2 {
       margin-top: 0;
       font-size: 1.7rem;
-      border-left: 6px solid #a855f7;
+      border-left: 6px solid #b02a37;
       padding-left: 16px;
-      color: #2a0f3f;
+      color: #5a0f1a;
     }
 
     .date {
       font-weight: 600;
       margin-top: 18px;
-      color: #4b145f;
+      color: #7a1c27;
     }
 
     footer {
@@ -95,7 +101,7 @@
     }
 
     a {
-      color: #a855f7;
+      color: #b02a37;
       text-decoration: none;
       font-weight: 500;
     }
@@ -106,11 +112,11 @@
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
       }
       .profile-pic {
-        width: 260px;
-        height: 260px;
+        width: 220px;
+        height: 220px;
       }
     }
   </style>
@@ -124,7 +130,7 @@
     <p><strong>Aspiring Medical Student</strong></p>
     <p>
       Cyprus • Kyrenia<br>
-      📧 <a href="mailto:main@demiruzun.online" style="color:#f3e8ff;">main@demiruzun.online</a>
+       <a href="mailto:main@demiruzun.online" style="color:#ffe5e8;">main@demiruzun.online</a>
     </p>
   </header>
 
@@ -210,12 +216,12 @@
         Predicted A-Level Grade: A*
       </p>
 
-      <p class="date">International GCSEs</p>
+      <p>International GCSEs</p>
       <p>
         ICT (7), Mathematics (9), Physics (8), Biology (8), Chemistry (9)
       </p>
 
-      <p class="date">IELTS</p>
+      <p>IELTS</p>
       <p>
         Overall Band Score: <strong>7.5</strong>
       </p>
@@ -233,9 +239,11 @@
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          entry.isIntersecting
-            ? entry.target.classList.add("active")
-            : entry.target.classList.remove("active");
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          } else {
+            entry.target.classList.remove("active");
+          }
         });
       },
       { threshold: 0.15 }
