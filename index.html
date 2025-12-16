@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 
 <html lang="en" data-qb-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Demir Uzun | CV</title>
 
+<style>
+.reveal {
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
 <style>
 :root {
   --bg:#f6f3f8;
@@ -38,8 +61,8 @@ header {
   display:flex;align-items:center;justify-content:center;
 }
 .profile-pic {
-      width: 350px;
-      height: 350px;
+      width: 500px;
+      height: 500px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 30px;
@@ -335,13 +358,13 @@ footer{text-align:center;opacity:.7;margin-bottom:20px}
 
 <main>
 
-<section>
+<section data-aos="fade-up">
 <h2 data-en="Profile" data-tr="Profil" data-fr="Profil">Profile</h2>
 
 <p data-en="Highly motivated student with a strong academic background and a deep interest in medicine, biology, and healthcare. Seeking admission to a medical program through UCAS and European university applications." data-tr="Güçlü akademik geçmişe sahip, tıp, biyoloji ve sağlık alanlarına derin ilgi duyan, yüksek motivasyonlu bir öğrenciyim. UCAS ve Avrupa üniversiteleri başvuruları yoluyla tıp programına kabul hedeflemekteyim." data-fr="Étudiant très motivé disposant d’un solide parcours académique et d’un intérêt profond pour la médecine, la biologie et les sciences de la santé. Je souhaite intégrer un programme de médecine via UCAS et les candidatures universitaires européennes.">Highly motivated student with a strong academic background and a deep interest in medicine, biology, and healthcare. Seeking admission to a medical program through UCAS and European university applications.</p>
 </section>
 
-<section>
+<section data-aos="fade-up">
 <h2 data-en="Education" data-tr="Eğitim" data-fr="Formation">Education</h2>
 
 <p data-en="Secondary education with strong academic performance, including advanced science subjects relevant to medicine." data-tr="Tıp alanıyla doğrudan ilişkili ileri seviye fen derslerini içeren güçlü bir akademik ortaöğretim eğitimi." data-fr="Formation secondaire avec d’excellents résultats académiques, incluant des matières scientifiques avancées pertinentes pour la médecine.">Secondary education with strong academic performance, including advanced science subjects relevant to medicine.</p>
@@ -371,7 +394,7 @@ footer{text-align:center;opacity:.7;margin-bottom:20px}
 
 </section>
 
-<section>
+<section data-aos="fade-up">
 <h2 data-en="Languages" data-tr="Diller" data-fr="Langues">Languages</h2>
 
 <ul>
@@ -385,7 +408,7 @@ footer{text-align:center;opacity:.7;margin-bottom:20px}
 </ul>
 </section>
 
-<section>
+<section data-aos="fade-up">
 <h2 data-en="Interests &amp; Achievements" data-tr="İlgi Alanları ve Başarılar" data-fr="Centres d’intérêt et réalisations">Interests &amp; Achievements</h2>
 
 <p data-en="Folk Dancing: Practiced from early childhood through high school, developing discipline, coordination, and teamwork." data-tr="Halk Dansları: Erken çocukluktan lise sonuna kadar aktif olarak çalışıldı; disiplin, koordinasyon ve takım çalışması becerileri geliştirildi." data-fr="Dans folklorique : pratiqué de la petite enfance jusqu’au lycée, développant discipline, coordination et esprit d’équipe.">Folk Dancing: Practiced from early childhood through high school, developing discipline, coordination, and teamwork.</p>
@@ -416,6 +439,44 @@ function toggleDark(){
 }
 setLang('en');
 </script>
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+
+        // Scroll DOWN → play animation
+        if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
+          // Reset animation
+          entry.target.classList.remove("active");
+          void entry.target.offsetWidth; // force reflow
+          entry.target.classList.add("active");
+        }
+
+        // Scroll UP past the section → reset silently
+        if (!entry.isIntersecting && entry.boundingClientRect.top > window.innerHeight) {
+          entry.target.classList.remove("active");
+        }
+
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: false,   // replay
+    mirror: false  // no animation on scroll up
+  });
+</script>
+
 
 
 
