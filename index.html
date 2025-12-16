@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+
+<html lang="en" data-qb-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Demir Uzun | CV</title>
 
@@ -24,12 +24,12 @@ body{
   color:var(--text);
   transition:.3s;
 }
-header{
-  background:linear-gradient(135deg,#5b0f0f,#9b1b1b);
-  padding:100px 20px 140px;
-  text-align:center;
-  color:white;
-}
+header {
+      background: linear-gradient(135deg, #5a0f1a, #8f1d2d, #b02a37);
+      color: white;
+      padding: 90px 20px 120px;
+      text-align: center;
+    }
 .pfp-wrapper{
   width:260px;height:260px;
   margin:auto;
@@ -37,11 +37,19 @@ header{
   background:radial-gradient(circle,rgba(255,255,255,.35),transparent 65%);
   display:flex;align-items:center;justify-content:center;
 }
-.profile-pic{
-  width:220px;height:220px;
-  border-radius:50%;
-  object-fit:cover;
-}
+.profile-pic {
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 30px;
+      background:
+        linear-gradient(135deg, #b02a37, #ff6b6b);
+      padding: 6px;
+      box-shadow:
+        0 20px 60px rgba(176,42,55,0.55),
+        0 0 0 8px rgba(255,255,255,0.08);
+    }
 h1{font-size:3rem;margin:20px 0 10px}
 main{
   max-width:900px;
@@ -71,133 +79,328 @@ button{
 }
 footer{text-align:center;opacity:.7;margin-bottom:20px}
 </style>
-</head>
+
+<style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+</style></head>
 
 <body>
 
 <div class="controls">
   <button onclick="toggleDark()">🌙</button>
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('tr')">TR</button>
-  <button onclick="setLang('fr')">FR</button>
+  <button onclick="setLang(&#39;en&#39;)">EN</button>
+  <button onclick="setLang(&#39;tr&#39;)">TR</button>
+  <button onclick="setLang(&#39;fr&#39;)">FR</button>
 </div>
-
-<header>
-  <div class="pfp-wrapper">
-    <img src="./IMG_1627.jpeg" class="profile-pic">
-  </div>
-  <h1 data-en="Demir Uzun"
-      data-tr="Demir Uzun"
-      data-fr="Demir Uzun"></h1>
-
-  <p data-en="Aspiring Medical Student"
-     data-tr="Tıp Adayı"
-     data-fr="Candidat aux études de médecine"></p>
-
-  <p data-en="Kyrenia, Cyprus"
-     data-tr="Girne, Kıbrıs"
-     data-fr="Kyrenia, Chypre"></p>
-
-  <a href="cv.pdf" download style="color:white;font-weight:bold"
-     data-en="⬇ Download CV"
-     data-tr="⬇ CV İndir"
-     data-fr="⬇ Télécharger le CV"></a>
-</header>
+  <header>
+<img src="./IMG_1627.jpeg" alt="Demir Uzun" class="profile-pic" />
+    <h1>Demir Uzun</h1>
+    <p><strong>Aspiring Medical Student</strong></p>
+    <p>
+      Cyprus • Kyrenia<br>
+       <a href="mailto:main@demiruzun.online" style="color:#ffe5e8;">main@demiruzun.online</a>
+    </p>
+  </header>
 
 <main>
 
 <section>
-<h2 data-en="Profile"
-    data-tr="Profil"
-    data-fr="Profil"></h2>
+<h2 data-en="Profile" data-tr="Profil" data-fr="Profil">Profile</h2>
 
-<p data-en="Highly motivated student with a strong academic background and a deep interest in medicine, biology, and healthcare. Seeking admission to a medical program through UCAS and European university applications."
-   data-tr="Güçlü akademik geçmişe sahip, tıp, biyoloji ve sağlık alanlarına derin ilgi duyan, yüksek motivasyonlu bir öğrenciyim. UCAS ve Avrupa üniversiteleri başvuruları yoluyla tıp programına kabul hedeflemekteyim."
-   data-fr="Étudiant très motivé disposant d’un solide parcours académique et d’un intérêt profond pour la médecine, la biologie et les sciences de la santé. Je souhaite intégrer un programme de médecine via UCAS et les candidatures universitaires européennes."></p>
+<p data-en="Highly motivated student with a strong academic background and a deep interest in medicine, biology, and healthcare. Seeking admission to a medical program through UCAS and European university applications." data-tr="Güçlü akademik geçmişe sahip, tıp, biyoloji ve sağlık alanlarına derin ilgi duyan, yüksek motivasyonlu bir öğrenciyim. UCAS ve Avrupa üniversiteleri başvuruları yoluyla tıp programına kabul hedeflemekteyim." data-fr="Étudiant très motivé disposant d’un solide parcours académique et d’un intérêt profond pour la médecine, la biologie et les sciences de la santé. Je souhaite intégrer un programme de médecine via UCAS et les candidatures universitaires européennes.">Highly motivated student with a strong academic background and a deep interest in medicine, biology, and healthcare. Seeking admission to a medical program through UCAS and European university applications.</p>
 </section>
 
 <section>
-<h2 data-en="Education"
-    data-tr="Eğitim"
-    data-fr="Formation"></h2>
+<h2 data-en="Education" data-tr="Eğitim" data-fr="Formation">Education</h2>
 
-<p data-en="Secondary education with strong academic performance, including advanced science subjects relevant to medicine."
-   data-tr="Tıp alanıyla doğrudan ilişkili ileri seviye fen derslerini içeren güçlü bir akademik ortaöğretim eğitimi."
-   data-fr="Formation secondaire avec d’excellents résultats académiques, incluant des matières scientifiques avancées pertinentes pour la médecine."></p>
+<p data-en="Secondary education with strong academic performance, including advanced science subjects relevant to medicine." data-tr="Tıp alanıyla doğrudan ilişkili ileri seviye fen derslerini içeren güçlü bir akademik ortaöğretim eğitimi." data-fr="Formation secondaire avec d’excellents résultats académiques, incluant des matières scientifiques avancées pertinentes pour la médecine.">Secondary education with strong academic performance, including advanced science subjects relevant to medicine.</p>
+<strong>Mathematics (AS)</strong> — 271/300 (A)<br>
+        Predicted A-Level Grade: A*
+      </p>
+
+      <p>
+        <strong>Biology (AS)</strong> — 212/300 (B)<br>
+        Predicted A Level Grade: A
+      </p>
+
+      <p>
+        <strong>Chemistry (AS)</strong> — 235/300 (B)<br>
+        Predicted A-Level Grade: A*
+      </p>
+
+      <p class="date"><strong>International GCSEs</strong></p>
+      <p>
+        ICT (7), Mathematics (9), Physics (8), Biology (8), Chemistry (9)
+      </p>
+      <p ><strong>IELTS Academic:</strong> Overall 7.5</p>
+      <p><strong>DELF French:</strong> B2 level</p>
+<ul>
+  
+
+
+</section>
+
+<section>
+<h2 data-en="Languages" data-tr="Diller" data-fr="Langues">Languages</h2>
 
 <ul>
-<li data-en="IELTS Academic: Overall 7.5"
-    data-tr="IELTS Akademik: Genel 7.5"
-    data-fr="IELTS académique : score global 7,5"></li>
+<li data-en="English – Fluent (IELTS 7.5)" data-tr="İngilizce – Akıcı (IELTS 7.5)" data-fr="Anglais – Courant (IELTS 7,5)">English – Fluent (IELTS 7.5)</li>
 
-<li data-en="DELF French: B2 level"
-    data-tr="DELF Fransızca: B2 Seviyesi"
-    data-fr="DELF français : niveau B2"></li>
+<li data-en="French – Upper-intermediate (DELF B2)" data-tr="Fransızca – İleri Orta Seviye (DELF B2)" data-fr="Français – Intermédiaire avancé (DELF B2)">French – Upper-intermediate (DELF B2)</li>
+
+<li data-en="Spanish – Self-taught (basic proficiency)" data-tr="İspanyolca – Kendi kendine öğrenilmiş (temel seviye)" data-fr="Espagnol – Autodidacte (niveau de base)">Spanish – Self-taught (basic proficiency)</li>
+
+<li data-en="Turkish – Native" data-tr="Türkçe – Ana dil" data-fr="Turc – Langue maternelle">Turkish – Native</li>
 </ul>
 </section>
 
 <section>
-<h2 data-en="Languages"
-    data-tr="Diller"
-    data-fr="Langues"></h2>
+<h2 data-en="Interests &amp; Achievements" data-tr="İlgi Alanları ve Başarılar" data-fr="Centres d’intérêt et réalisations">Interests &amp; Achievements</h2>
 
-<ul>
-<li data-en="English – Fluent (IELTS 7.5)"
-    data-tr="İngilizce – Akıcı (IELTS 7.5)"
-    data-fr="Anglais – Courant (IELTS 7,5)"></li>
+<p data-en="Folk Dancing: Practiced from early childhood through high school, developing discipline, coordination, and teamwork." data-tr="Halk Dansları: Erken çocukluktan lise sonuna kadar aktif olarak çalışıldı; disiplin, koordinasyon ve takım çalışması becerileri geliştirildi." data-fr="Dans folklorique : pratiqué de la petite enfance jusqu’au lycée, développant discipline, coordination et esprit d’équipe.">Folk Dancing: Practiced from early childhood through high school, developing discipline, coordination, and teamwork.</p>
 
-<li data-en="French – Upper-intermediate (DELF B2)"
-    data-tr="Fransızca – İleri Orta Seviye (DELF B2)"
-    data-fr="Français – Intermédiaire avancé (DELF B2)"></li>
+<p data-en="School Leadership: Served as class president in 9th and 10th grade and was elected school president in 11th grade, organizing school activities and demonstrating leadership and responsibility." data-tr="Okul Liderliği: 9. ve 10. sınıflarda sınıf başkanı, 11. sınıfta okul başkanı olarak görev alındı; okul etkinlikleri organize edildi ve liderlik sorumluluğu üstlenildi." data-fr="Leadership scolaire : délégué de classe en 9e et 10e années, puis président de l’établissement en 11e année, avec organisation d’activités scolaires et prise de responsabilités.">School Leadership: Served as class president in 9th and 10th grade and was elected school president in 11th grade, organizing school activities and demonstrating leadership and responsibility.</p>
 
-<li data-en="Spanish – Self-taught (basic proficiency)"
-    data-tr="İspanyolca – Kendi kendine öğrenilmiş (temel seviye)"
-    data-fr="Espagnol – Autodidacte (niveau de base)"></li>
+<p data-en="Music: Self-taught guitarist during the quarantine period and represented the school at national level. Also played drums, developing rhythmic precision and musical awareness." data-tr="Müzik: Karantina döneminde kendi kendine gitar öğrenildi ve okul ulusal düzeyde temsil edildi. Ayrıca davul çalınarak ritmik hassasiyet ve müzikal farkındalık geliştirildi." data-fr="Musique : guitariste autodidacte durant la période de confinement, représentant l’établissement au niveau national. Pratique de la batterie, renforçant la précision rythmique et la sensibilité musicale.">Music: Self-taught guitarist during the quarantine period and represented the school at national level. Also played drums, developing rhythmic precision and musical awareness.</p>
 
-<li data-en="Turkish – Native"
-    data-tr="Türkçe – Ana dil"
-    data-fr="Turc – Langue maternelle"></li>
-</ul>
-</section>
-
-<section>
-<h2 data-en="Interests & Achievements"
-    data-tr="İlgi Alanları ve Başarılar"
-    data-fr="Centres d’intérêt et réalisations"></h2>
-
-<p data-en="Folk Dancing: Practiced from early childhood through high school, developing discipline, coordination, and teamwork."
-   data-tr="Halk Dansları: Erken çocukluktan lise sonuna kadar aktif olarak çalışıldı; disiplin, koordinasyon ve takım çalışması becerileri geliştirildi."
-   data-fr="Dans folklorique : pratiqué de la petite enfance jusqu’au lycée, développant discipline, coordination et esprit d’équipe."></p>
-
-<p data-en="School Leadership: Served as class president in 9th and 10th grade and was elected school president in 11th grade, organizing school activities and demonstrating leadership and responsibility."
-   data-tr="Okul Liderliği: 9. ve 10. sınıflarda sınıf başkanı, 11. sınıfta okul başkanı olarak görev alındı; okul etkinlikleri organize edildi ve liderlik sorumluluğu üstlenildi."
-   data-fr="Leadership scolaire : délégué de classe en 9e et 10e années, puis président de l’établissement en 11e année, avec organisation d’activités scolaires et prise de responsabilités."></p>
-
-<p data-en="Music: Self-taught guitarist during the quarantine period and represented the school at national level. Also played drums, developing rhythmic precision and musical awareness."
-   data-tr="Müzik: Karantina döneminde kendi kendine gitar öğrenildi ve okul ulusal düzeyde temsil edildi. Ayrıca davul çalınarak ritmik hassasiyet ve müzikal farkındalık geliştirildi."
-   data-fr="Musique : guitariste autodidacte durant la période de confinement, représentant l’établissement au niveau national. Pratique de la batterie, renforçant la précision rythmique et la sensibilité musicale."></p>
-
-<p data-en="Coding: Self-taught basic algorithms using Python, developing logical thinking and problem-solving skills."
-   data-tr="Kodlama: Python kullanarak temel algoritmalar kendi kendine öğrenildi; mantıksal düşünme ve problem çözme becerileri geliştirildi."
-   data-fr="Programmation : apprentissage autodidacte des algorithmes de base en Python, renforçant la pensée logique et les compétences en résolution de problèmes."></p>
-</section>
-
-<section>
-<h2 data-en="Applications"
-    data-tr="Başvurular"
-    data-fr="Candidatures"></h2>
-
-<p data-en="Applying to medical programs through UCAS (UK) and European Union university application systems."
-   data-tr="UCAS (Birleşik Krallık) ve Avrupa Birliği üniversite başvuru sistemleri üzerinden tıp programlarına başvuru yapılmaktadır."
-   data-fr="Candidatures aux programmes de médecine via UCAS (Royaume-Uni) et les systèmes de candidature des universités de l’Union européenne."></p>
+<p data-en="Coding: Self-taught basic algorithms using Python, developing logical thinking and problem-solving skills." data-tr="Kodlama: Python kullanarak temel algoritmalar kendi kendine öğrenildi; mantıksal düşünme ve problem çözme becerileri geliştirildi." data-fr="Programmation : apprentissage autodidacte des algorithmes de base en Python, renforçant la pensée logique et les compétences en résolution de problèmes.">Coding: Self-taught basic algorithms using Python, developing logical thinking and problem-solving skills.</p>
 </section>
 
 </main>
 
 <footer>
-<p data-en="© 2025 Demir Uzun"
-   data-tr="© 2025 Demir Uzun"
-   data-fr="© 2025 Demir Uzun"></p>
+<p data-en="© 2025 Demir Uzun" data-tr="© 2025 Demir Uzun" data-fr="© 2025 Demir Uzun">© 2025 Demir Uzun</p>
 </footer>
 
 <script>
@@ -214,5 +417,6 @@ function toggleDark(){
 setLang('en');
 </script>
 
-</body>
-</html>
+
+
+</body></html>
