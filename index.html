@@ -1,256 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demir Uzun | CV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demir Uzun | CV</title>
 
-  <style>
-    /* Scroll animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(90px) scale(0.95);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #f7f2f3;
-      color: #1f1f1f;
-      line-height: 1.65;
-    }
-
-    header {
-      background: linear-gradient(135deg, #5a0f1a, #8f1d2d, #b02a37);
-      color: white;
-      padding: 90px 20px 120px;
-      text-align: center;
-    }
-
-    /* Profile picture with non-static look */
-    .profile-pic {
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 30px;
-      background:
-        linear-gradient(135deg, #b02a37, #ff6b6b);
-      padding: 6px;
-      box-shadow:
-        0 20px 60px rgba(176,42,55,0.55),
-        0 0 0 8px rgba(255,255,255,0.08);
-    }
-
-    .profile-pic {
-      background-clip: padding-box;
-    }
-
-    header h1 {
-      margin: 16px 0 10px;
-      font-size: 3.6rem;
-      font-weight: 800;
-      letter-spacing: 0.6px;
-    }
-
-    header p {
-      margin: 6px 0;
-      font-size: 1.25rem;
-      opacity: 0.96;
-    }
-
-    main {
-      max-width: 900px;
-      margin: -90px auto 50px;
-      padding: 0 20px;
-    }
-
-    section {
-      background: white;
-      padding: 32px;
-      margin-bottom: 26px;
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(120, 20, 30, 0.08);
-    }
-
-    section h2 {
-      margin-top: 0;
-      font-size: 1.7rem;
-      border-left: 6px solid #b02a37;
-      padding-left: 16px;
-      color: #5a0f1a;
-    }
-
-    .date {
-      font-weight: 600;
-      margin-top: 18px;
-      color: #7a1c27;
-    }
-
-    footer {
-      text-align: center;
-      padding: 22px;
-      font-size: 0.9rem;
-      color: #6b6b6b;
-    }
-
-    a {
-      color: #b02a37;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.4rem;
-      }
-      .profile-pic {
-        width: 220px;
-        height: 220px;
-      }
-    }
-  </style>
+<style>
+:root {
+  --bg:#f6f3f8;
+  --text:#1f1f1f;
+  --card:white;
+  --accent:#a83232;
+}
+body.dark{
+  --bg:#0f0f14;
+  --text:#f1f1f1;
+  --card:#1a1a22;
+}
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+}
+header{
+  background:linear-gradient(135deg,#5b0f0f,#9b1b1b);
+  padding:100px 20px 140px;
+  text-align:center;
+  color:white;
+}
+.pfp-wrapper{
+  width:260px;height:260px;
+  margin:auto;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.35),transparent 65%);
+  display:flex;align-items:center;justify-content:center;
+}
+.profile-pic{
+  width:220px;height:220px;
+  border-radius:50%;
+  object-fit:cover;
+}
+h1{font-size:3rem;margin:20px 0 10px}
+main{
+  max-width:900px;
+  margin:-100px auto 60px;
+  padding:0 20px;
+}
+section{
+  background:var(--card);
+  padding:32px;
+  margin-bottom:26px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+h2{
+  border-left:6px solid var(--accent);
+  padding-left:14px;
+}
+.controls{
+  position:fixed;top:15px;right:15px;
+  display:flex;gap:10px;
+}
+button{
+  padding:8px 14px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+}
+footer{text-align:center;opacity:.7;margin-bottom:20px}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <img src="./IMG_1627.jpeg" alt="Demir Uzun" class="profile-pic" />
-    <h1>Demir Uzun</h1>
-    <p><strong>Aspiring Medical Student</strong></p>
-    <p>
-      Cyprus • Kyrenia<br>
-       <a href="mailto:main@demiruzun.online" style="color:#ffe5e8;">main@demiruzun.online</a>
-    </p>
-  </header>
+<div class="controls">
+  <button onclick="toggleDark()">🌙</button>
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('tr')">TR</button>
+  <button onclick="setLang('fr')">FR</button>
+</div>
 
-  <main>
+<header>
+  <div class="pfp-wrapper">
+    <img src="./profile.jpeg" class="profile-pic">
+  </div>
+  <h1 data-en="Demir Uzun"
+      data-tr="Demir Uzun"
+      data-fr="Demir Uzun"></h1>
 
-    <section class="reveal">
-      <h2>Profile</h2>
-      <p>
-        Sociable, highly motivated and creative student with strong communication,
-        time-management, and problem-solving skills. Passionate about medicine,
-        biology, and the functions of the human body, supported by hands-on
-        clinical and observational experience.
-      </p>
-    </section>
+  <p data-en="Aspiring Medical Student"
+     data-tr="Tıp Adayı"
+     data-fr="Candidat aux études de médecine"></p>
 
-    <section class="reveal">
-      <h2>Experience</h2>
+  <p data-en="Kyrenia, Cyprus"
+     data-tr="Girne, Kıbrıs"
+     data-fr="Kyrenia, Chypre"></p>
 
-      <p class="date">July 2025 — Öncan Veterinary Clinic (Intern)</p>
-      <p>
-        Gained experience in patient handling, interpretation of blood test results,
-        and observation of surgical procedures and techniques used by veterinary surgeons.
-      </p>
+  <a href="cv.pdf" download style="color:white;font-weight:bold"
+     data-en="⬇ Download CV"
+     data-tr="⬇ CV İndir"
+     data-fr="⬇ Télécharger le CV"></a>
+</header>
 
-      <p class="date">August 2025 — Akçiçek State Hospital (Intern)</p>
-      <p>
-        Interned in emergency and internal medicine departments. Learned suturing techniques,
-        blood pressure monitoring, and medication administration for various clinical cases.
-      </p>
+<main>
 
-      <p class="date">11 August 2025 — Surgical Observation</p>
-      <p>
-        Observed a complex salivary gland surgery involving removal of a benign mass,
-        with close attention to nerve preservation and pathology procedures.
-      </p>
+<section>
+<h2 data-en="Profile"
+    data-tr="Profil"
+    data-fr="Profil"></h2>
 
-      <p class="date">September 2025 — Pediatric Immunology</p>
-      <p>
-        Observed pediatric immunology practice, including allergy testing and
-        patient interaction, with a focus on child psychology and communication.
-      </p>
-    </section>
+<p data-en="Highly motivated student with a strong academic background and a deep interest in medicine, biology, and healthcare. Seeking admission to a medical program through UCAS and European university applications."
+   data-tr="Güçlü akademik geçmişe sahip, tıp, biyoloji ve sağlık alanlarına derin ilgi duyan, yüksek motivasyonlu bir öğrenciyim. UCAS ve Avrupa üniversiteleri başvuruları yoluyla tıp programına kabul hedeflemekteyim."
+   data-fr="Étudiant très motivé disposant d’un solide parcours académique et d’un intérêt profond pour la médecine, la biologie et les sciences de la santé. Je souhaite intégrer un programme de médecine via UCAS et les candidatures universitaires européennes."></p>
+</section>
 
-    <section class="reveal">
-      <h2>Interests & Achievements</h2>
+<section>
+<h2 data-en="Education"
+    data-tr="Eğitim"
+    data-fr="Formation"></h2>
 
-      <p><strong>Folk Dancing</strong><br>
-        Practiced from early childhood through high school, developing discipline,
-        coordination, and teamwork.
-      </p>
+<p data-en="Secondary education with strong academic performance, including advanced science subjects relevant to medicine."
+   data-tr="Tıp alanıyla doğrudan ilişkili ileri seviye fen derslerini içeren güçlü bir akademik ortaöğretim eğitimi."
+   data-fr="Formation secondaire avec d’excellents résultats académiques, incluant des matières scientifiques avancées pertinentes pour la médecine."></p>
 
-      <p><strong>School Leadership</strong><br>
-        Class president in 9th and 10th grade. Elected school president in 11th grade,
-        organizing activities and demonstrating leadership skills.
-      </p>
+<ul>
+<li data-en="IELTS Academic: Overall 7.5"
+    data-tr="IELTS Akademik: Genel 7.5"
+    data-fr="IELTS académique : score global 7,5"></li>
 
-      <p><strong>Music</strong><br>
-        Self-taught guitarist during quarantine and represented school at national level.
-        Played drums, developing rhythmic precision and musical awareness.
-      </p>
+<li data-en="DELF French: B2 level"
+    data-tr="DELF Fransızca: B2 Seviyesi"
+    data-fr="DELF français : niveau B2"></li>
+</ul>
+</section>
 
-      <p><strong>Coding</strong><br>
-        Self-taught basic algorithms using Python.
-      </p>
-    </section>
+<section>
+<h2 data-en="Languages"
+    data-tr="Diller"
+    data-fr="Langues"></h2>
 
-    <section class="reveal">
-      <h2>Education</h2>
+<ul>
+<li data-en="English – Fluent (IELTS 7.5)"
+    data-tr="İngilizce – Akıcı (IELTS 7.5)"
+    data-fr="Anglais – Courant (IELTS 7,5)"></li>
 
-      <p class="date">International AS & A Levels</p>
-      <p>
-        <strong>Mathematics (AS)</strong> — 271/300 (A)<br>
-        Predicted A-Level Grade: A*
-      </p>
+<li data-en="French – Upper-intermediate (DELF B2)"
+    data-tr="Fransızca – İleri Orta Seviye (DELF B2)"
+    data-fr="Français – Intermédiaire avancé (DELF B2)"></li>
 
-      <p>
-        <strong>Biology (AS)</strong> — 212/300 (B)<br>
-        Predicted A Level Grade: A
-      </p>
+<li data-en="Spanish – Self-taught (basic proficiency)"
+    data-tr="İspanyolca – Kendi kendine öğrenilmiş (temel seviye)"
+    data-fr="Espagnol – Autodidacte (niveau de base)"></li>
 
-      <p>
-        <strong>Chemistry (AS)</strong> — 235/300 (B)<br>
-        Predicted A-Level Grade: A*
-      </p>
+<li data-en="Turkish – Native"
+    data-tr="Türkçe – Ana dil"
+    data-fr="Turc – Langue maternelle"></li>
+</ul>
+</section>
 
-      <p><strong>International GCSEs</strong></p>
-      <p>
-        ICT (7), Mathematics (9), Physics (8), Biology (8), Chemistry (9)
-      </p>
+<section>
+<h2 data-en="Interests & Achievements"
+    data-tr="İlgi Alanları ve Başarılar"
+    data-fr="Centres d’intérêt et réalisations"></h2>
 
-      <p><strong>IELTS</strong></p>
-      <p>
-        Overall Band Score: <strong>7.5</strong>
-      </p>
-    </section>
+<p data-en="Folk Dancing: Practiced from early childhood through high school, developing discipline, coordination, and teamwork."
+   data-tr="Halk Dansları: Erken çocukluktan lise sonuna kadar aktif olarak çalışıldı; disiplin, koordinasyon ve takım çalışması becerileri geliştirildi."
+   data-fr="Dans folklorique : pratiqué de la petite enfance jusqu’au lycée, développant discipline, coordination et esprit d’équipe."></p>
 
-  </main>
+<p data-en="School Leadership: Served as class president in 9th and 10th grade and was elected school president in 11th grade, organizing school activities and demonstrating leadership and responsibility."
+   data-tr="Okul Liderliği: 9. ve 10. sınıflarda sınıf başkanı, 11. sınıfta okul başkanı olarak görev alındı; okul etkinlikleri organize edildi ve liderlik sorumluluğu üstlenildi."
+   data-fr="Leadership scolaire : délégué de classe en 9e et 10e années, puis président de l’établissement en 11e année, avec organisation d’activités scolaires et prise de responsabilités."></p>
 
-  <footer>
-    © 2025 Demir Uzun
-  </footer>
+<p data-en="Music: Self-taught guitarist during the quarantine period and represented the school at national level. Also played drums, developing rhythmic precision and musical awareness."
+   data-tr="Müzik: Karantina döneminde kendi kendine gitar öğrenildi ve okul ulusal düzeyde temsil edildi. Ayrıca davul çalınarak ritmik hassasiyet ve müzikal farkındalık geliştirildi."
+   data-fr="Musique : guitariste autodidacte durant la période de confinement, représentant l’établissement au niveau national. Pratique de la batterie, renforçant la précision rythmique et la sensibilité musicale."></p>
 
-  <script>
-    const reveals = document.querySelectorAll(".reveal");
+<p data-en="Coding: Self-taught basic algorithms using Python, developing logical thinking and problem-solving skills."
+   data-tr="Kodlama: Python kullanarak temel algoritmalar kendi kendine öğrenildi; mantıksal düşünme ve problem çözme becerileri geliştirildi."
+   data-fr="Programmation : apprentissage autodidacte des algorithmes de base en Python, renforçant la pensée logique et les compétences en résolution de problèmes."></p>
+</section>
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          } else {
-            entry.target.classList.remove("active");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+<section>
+<h2 data-en="Applications"
+    data-tr="Başvurular"
+    data-fr="Candidatures"></h2>
 
-    reveals.forEach(section => observer.observe(section));
-  </script>
+<p data-en="Applying to medical programs through UCAS (UK) and European Union university application systems."
+   data-tr="UCAS (Birleşik Krallık) ve Avrupa Birliği üniversite başvuru sistemleri üzerinden tıp programlarına başvuru yapılmaktadır."
+   data-fr="Candidatures aux programmes de médecine via UCAS (Royaume-Uni) et les systèmes de candidature des universités de l’Union européenne."></p>
+</section>
+
+</main>
+
+<footer>
+<p data-en="© 2025 Demir Uzun"
+   data-tr="© 2025 Demir Uzun"
+   data-fr="© 2025 Demir Uzun"></p>
+</footer>
+
+<script>
+let currentLang='en';
+function setLang(lang){
+  currentLang=lang;
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = el.dataset[lang] || el.dataset.en;
+  });
+}
+function toggleDark(){
+  document.body.classList.toggle('dark');
+}
+setLang('en');
+</script>
 
 </body>
 </html>
